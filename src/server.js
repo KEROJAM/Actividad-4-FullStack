@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const productRoutes = require('./routes/productRoutes');
 const groceryListRoutes = require('./routes/groceryListRoutes');
 
 const app = express();
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 app.use('/api/grocery-lists', groceryListRoutes);
 
 app.use((err, req, res, next) => {
