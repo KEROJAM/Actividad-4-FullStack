@@ -5,74 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Express JWT App</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Patrick+Hand&display=swap');
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Patrick Hand', cursive;
+      background-color: #fdfbf7;
+      background-image: 
+        linear-gradient(#e8d5b7 1px, transparent 1px);
+      background-size: 100% 28px;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      left: 60px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #ff6b6b;
     }
     .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      background: #fffef9;
+      padding: 2.5rem;
+      border-radius: 5px;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
       width: 100%;
-      max-width: 400px;
+      max-width: 380px;
+      border: 2px solid #d4c4a8;
     }
     h1 {
       text-align: center;
-      color: #333;
+      color: #4a3520;
       margin-bottom: 1.5rem;
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      border-bottom: 2px dashed #d4c4a8;
+      padding-bottom: 0.5rem;
     }
     .form-group {
       margin-bottom: 1rem;
     }
     label {
       display: block;
-      margin-bottom: 0.5rem;
-      color: #555;
-      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #5c4033;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
     input {
       width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 1rem;
+      padding: 0.6rem;
+      border: 2px solid #d4c4a8;
+      border-radius: 3px;
+      font-size: 1.1rem;
+      font-family: 'Patrick Hand', cursive;
+      background: #fffef9;
     }
     input:focus {
       outline: none;
-      border-color: #667eea;
+      border-color: #8b4513;
+      background: #fff;
     }
     button {
       width: 100%;
-      padding: 0.75rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
+      padding: 0.7rem;
+      background: #8b4513;
+      color: #fffaf0;
+      border: 2px solid #654321;
+      border-radius: 3px;
+      font-size: 1.2rem;
+      font-family: 'Patrick Hand', cursive;
       cursor: pointer;
       margin-top: 1rem;
     }
     button:hover {
-      opacity: 0.9;
+      background: #654321;
     }
     .register-link {
       text-align: center;
-      margin-top: 1rem;
-      color: #666;
+      margin-top: 1.2rem;
+      color: #5c4033;
+      font-size: 1.1rem;
     }
     .register-link a {
-      color: #667eea;
+      color: #8b4513;
       text-decoration: none;
+      font-weight: bold;
     }
     .register-link a:hover {
       text-decoration: underline;
@@ -82,17 +108,18 @@
       border-radius: 5px;
       margin-bottom: 1rem;
       display: none;
+      font-size: 1.1rem;
     }
     #message.error {
-      background: #fee;
-      color: #c33;
-      border: 1px solid #fcc;
+      background: #fde8e8;
+      color: #922b21;
+      border: 2px solid #c0392b;
       display: block;
     }
     #message.success {
-      background: #efe;
-      color: #3c3;
-      border: 1px solid #cfc;
+      background: #e8f5e9;
+      color: #2d5a27;
+      border: 2px solid #27ae60;
       display: block;
     }
   </style>
